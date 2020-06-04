@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Challenge 2</title>
+</head>
+<body>
+    <div class="page-wrapper">
+        <main class="main-content">
+            <section>
+                <h1>Basic Challenge 2</h1>
+                <p><strong>Problem:</strong></p>
+                <p>John and Mike both play basketball in different teams. In the latest 3 games, John's team scored 89, 120 and 103 points, while Mike's team scored 116, 94 and 123 points.</p>
+                <ol>
+                    <li>Calculate the average score for each team</li>
+                    <li>Decide which team wins in average (highest average score), and print the winner to the console. Also include the average score in the ouput</li>
+                    <li>Then change the scores to show different winners. Don't forget to take into account there might be a draw (the same average score)</li>
+                    <li>EXTRA: Mary also plays basketball, and her team scored 97, 134 and 105 points. Like before, log the average winner to the console. HINT: you will need the && operator to take the decision. If you can't solve this one, just watch the solution, it's no problem.</li>
+                    <li>Like before, change the scores to generate different winners, keeping in mind there might be draws</li>
+                </ol>
+
+                <p>View console for answer</p>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        var AverageJohn = (89 + 120 + 103) / 3;
+        var AverageMike = (97 + 134 + 305) / 3;
+        var AverageMary = (97 + 52 + 25) / 3;
+
+        console.log('John Average Score: ' + AverageJohn);
+        console.log('Mike Average Score: ' + AverageMike);
+        console.log('Mary Average Score: ' + AverageMary);
+
+        // Simple Shorthand if else
+        // var winner = (AverageMike > AverageJohn) ? console.log('Winner Mike with Average Score: ' + AverageMike) : console.log('Winner John with Average Score: ' + AverageJohn);
+
+        if (AverageJohn > AverageMike) {
+            console.log('Winner: John. Score: ' + AverageJohn);
+        }
+        else if (AverageMary > AverageJohn || AverageMary > AverageMike) {
+            console.log('Winner: Mary. Score: ' + AverageMary);
+        }
+        else if (AverageMary == AverageJohn || AverageMary == AverageMike || AverageJohn == AverageMike) {
+            console.log('Two Teams are Draw');
+        }
+        else if ( AverageJohn == AverageMike && AverageMike == AverageMary && AverageJohn == AverageMary) {
+            console.log('Three Teams are Draw');
+        }
+        else {
+            console.log('Winner: Mike. Score: ' + AverageMike);
+        }
+    </script>
+</body>
+</html>
