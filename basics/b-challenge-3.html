@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Challenge 3</title>
+</head>
+<body>
+    <div class="page-wrapper">
+        <main class="main-content">
+            <h1>Basic Challenge 3</h1>
+            <p><strong>Problem:</strong></p>
+            <p>John and his family went on a holiday and went to a 3 different restaurants. The bill were $124, $48 and $268.</p>
+            <p>To tip the waiter a fair amount, John created a simple tip calculator (as a function). He likes to tip 20% of the bill when the bill is less then $50, 15% when the bill is between $50 and $200, and 10% if the bill is more than $200.</p>
+            <p>In the end, John would like to have 2 arrays:</p>
+            <ol>
+                <li>Containing all three tips (one for each bill)</li>
+                <li>Containing all three final paid amounts (bill + tip)</li>
+            </ol>
+            <p>(NOTE: To calculate 20% of a value, simply multiply if with 20/100 = 0.2)</p>
+            <p>View Console for answer.</p>
+        </main>
+    </div>
+    <script>
+        function tipCal(bill) {
+            var percentage;
+            if (bill < 50) {
+                percentage = .2;
+            } 
+            else if (bill >= 50 && bill < 200) {
+                percentage = .15;
+            }
+            else {
+                percentage = .1;
+            }
+            return percentage * bill;
+        }
+
+        var bills = [124, 48, 268];
+        var tips = [tipCal(bills[0]),
+                    tipCal(bills[1]),
+                    tipCal(bills[2])];
+        var finalVal = [bills[0] + tips[0],
+                        bills[1] + tips[1],
+                        bills[2] + tips[2]];
+        console.log(tips, finalVal);
+    </script>
+</body>
+</html>
